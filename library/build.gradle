@@ -9,31 +9,25 @@ android {
         minSdkVersion 14
         targetSdkVersion 34
         versionCode 1
-        versionName "1.0"
+        versionName "1.1.12"
     }
-    signingConfigs {
-        release {
-            // Configure your release signing config here
-            // Example:
-            // keyAlias 'yourKeyAlias'
-            // keyPassword 'yourKeyPassword'
-            // storeFile file('path/to/your/keystore.jks')
-            // storePassword 'yourStorePassword'
-        }
-    }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.release
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            signingConfig signingConfigs.release
-        }
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //jitpack publishing
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
     }
 }
 
@@ -54,10 +48,10 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.harsewaksingh13'
             artifactId = 'viewpagerindicator'
-            version = '1.0.0'
+            version = '1.1.12'
 
             afterEvaluate {
-//                from components.release
+                from components.findByName('release')
             }
         }
     }
@@ -68,3 +62,4 @@ publishing {
        }
     }
 }
+
