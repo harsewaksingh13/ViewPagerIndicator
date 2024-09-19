@@ -1,21 +1,17 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-    }
-}
 apply plugin: 'com.android.library'
 
 android {
     namespace = "com.viewpagerindicator"
-    compileSdkVersion 22
-    buildToolsVersion '25.0.0'
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 
     defaultConfig {
-        minSdkVersion 4
-        targetSdkVersion 22
+        minSdkVersion 14
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
@@ -30,5 +26,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:support-v4:22.+'
+    implementation 'com.android.support:support-v4:28.0.0'
 }
