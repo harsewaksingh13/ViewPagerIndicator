@@ -1,7 +1,6 @@
 Android ViewPagerIndicator
 ==========================
 
-[ ![Download](https://api.bintray.com/packages/msdx/maven/ViewPagerIndicator/images/download.svg) ][12]
 
 Paging indicator widgets that are compatible with the `ViewPager` from the
 [Android Support Library][2] to improve discoverability of content.
@@ -73,24 +72,15 @@ You can include this project by [referencing it as a aar file][7] in gradle.
 If you are a Gradle user you can easily include the library by specifying it as
 a dependency:
 
-    compile 'com.githang:viewpagerindicator:2.5.1'
+```
+ implementation 'com.github.harsewaksingh13:ViewPagerIndicator:1.1.11'
+```
 
+Make sure to update your build.gradle or settings.gradle if not already to use mavel like below
 
-For SNAPSHOT version, you need to declare oss-snapshot-local repository at first:
-
-        maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
-
-Then include it into your build.gradle:
-
-    compile 'com.githang:viewpagerindicator:2.5-SNAPSHOT@aar'
-
-Note: Use snapshot repository may slow down the speed of gradle resolving dependencies if you use android support library.
-
-
-This project depends on the `ViewPager` class which is available in the
-[Android Support Library][2] or [ActionBarSherlock][3]. Details for
-including one of those libraries is available on their respecitve web sites.
-
+```
+ maven { url "https://jitpack.io" }
+```
 
 
 
